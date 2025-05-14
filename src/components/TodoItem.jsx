@@ -9,7 +9,7 @@ function TodoItem({ todo, fetchTodos }) {
   const updateTodo = async () => {
     if (!text.trim()) return;
     try {
-      await axios.put(`http://localhost:5000/api/todos/${todo._id}`, { text });
+      await axios.put(`https://backend-428s.onrender.com/api/todos/${todo._id}`, { text });
       setIsEditing(false);
       fetchTodos();
     } catch (error) {
@@ -20,7 +20,7 @@ function TodoItem({ todo, fetchTodos }) {
   // Delete todo
   const deleteTodo = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/todos/${todo._id}`);
+      await axios.delete(`https://backend-428s.onrender.com/api/todos/${todo._id}`);
       fetchTodos();
     } catch (error) {
       console.error(error);

@@ -9,7 +9,7 @@ function Home() {
   // Fetch all todos
   const fetchTodos = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/todos");
+      const res = await axios.get("https://backend-428s.onrender.com/api/todos");
       setTodos(res.data);
     } catch (error) {
       console.error(error);
@@ -24,7 +24,7 @@ function Home() {
   const createTodo = async () => {
     if (!text.trim()) return;
     try {
-      await axios.post("http://localhost:5000/api/todos", { text });
+      await axios.post("https://backend-428s.onrender.com/api/todos", { text });
       setText("");
       fetchTodos();
     } catch (error) {
